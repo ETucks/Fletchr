@@ -30,11 +30,11 @@ class TaskItem extends Component {
   render(){
     return (
       <div>
-	      <ListGroupItem>
-	      	<Button color="info" size="sm" onClick={this.completeCheck}>
-		    </Button>
-		    {'\u00A0 \u00A0'}
-	      {this.props.item.text}
+	      <ListGroupItem className="taskItem">
+  	      <Button className="taskCompleteBtn" color="info" size="sm" onClick={this.completeCheck}> 
+  		    </Button>
+  		    {'\u00A0 \u00A0'}
+  	      {this.props.item.text}
 	      </ListGroupItem>
 	  </div>
     );

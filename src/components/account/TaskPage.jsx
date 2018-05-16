@@ -90,24 +90,26 @@ class TaskPage extends Component  {
   };
   render() {
     return (
+    <div>
       <div class="hero-image">
-        <div class="hero-contents">
-          <Row>
-            <InputGroup>
-              <InputGroupAddon addonType="prepend">
-                <Button color="info" size="sm" onClick={this.createTaskClick}>+</Button>
-              </InputGroupAddon>
-              <Input type="text" bsSize="sm" onChange={this.taskTextUpdate} onKeyUp={this.catchEnter} placeholder="New task" value={this.state.newTaskText} />
-            </InputGroup>
-          </Row>
-          <Row>
-            <ListGroup>
-              {this.state.tasks.map((task,i) => {
-                return <TaskItem key={i} item={task} completeCheck={this.completeCheck}></TaskItem>;
-              })}
-            </ListGroup>
-          </Row>
-        </div>
+      </div>
+      <div class="hero-contents">
+        <Row>
+          <InputGroup>
+            <InputGroupAddon addonType="prepend">
+              <Button color="info" size="sm" onClick={this.createTaskClick}>+</Button>
+            </InputGroupAddon>
+            <Input id="task-input" type="text" bsSize="sm" onChange={this.taskTextUpdate} onKeyUp={this.catchEnter} placeholder="New task" value={this.state.newTaskText} />
+          </InputGroup>
+        </Row>
+        <Row>
+          <ListGroup>
+            {this.state.tasks.map((task,i) => {
+              return <TaskItem key={i} item={task} completeCheck={this.completeCheck}></TaskItem>;
+            })}
+          </ListGroup>
+        </Row>
+      </div>
       </div>
     );
   }
